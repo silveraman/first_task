@@ -1,4 +1,3 @@
-/* colors -> https://coolors.co/e54b4b-ebebd3-464655-e4b363-e8e9eb */
 
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
 
@@ -18,85 +17,62 @@ body {
     position: relative;
     display: flex;
     justify-content: space-between;
-    margin-inline: 5vw;
-    padding-top: 35px;
-  /* width: 95%;
-  max-width: 1000px;
-  margin: 0 0; */
+    padding: 20px;
+    width: min(1100px,80%);
+    margin: 0 auto;
+    align-items:center;
 }
 
+.site {
+  list-style: none;
+  display: flex;
+}
+.site a {
+  padding: 0px 10px; 
+}
 
 header {
     position: relative;
-    width: 100%;
     height: 100vh;
     background-color: #ffffff;
     background-image: linear-gradient(hsla(0, 0%, 97%, .9), #9B8055);
-  /* background: #E54B4B;
-  color: #EBEBD3;
-  padding: 1em 0;
-  position: relative; */
 }
 
 header::after {
-  content: '';
-  clear: both;
   display: block;
 }
-
-.logo {
-  float: left;
-  font-size: 1rem;
-  margin: 0;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-.logo span {
-  font-weight: 400;
-}
-.site-nav img{
-    padding: 0px 12px;
-}
-.side-vector img{
-    padding: 0px 5px;
-}
-
 .site-nav {
   position: absolute;
-  top: 100%;
+  top: 100%;       /* top orignally at 100% */ 
   right: 0%;
   background: #464655;
-  clip-path: circle(0px at top right);
+  clip-path: circle(0px at top right);        /*at top right */
   transition: clip-path ease-in-out 700ms;
-/*   display: none; */
+  height: 0px;
+  overflow: hidden;
 }
 
 .site-nav--open {
   clip-path: circle(500% at top right);
-   /* display: block;  */
+  height: 100vh;
+  width: 100vw;
 }
 
 .site-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  /* temp */
+  list-style:none;
   height: 100%;
-  flex-direction: column;
-  justify-content: stretch;
+   flex-direction: row; 
+   justify-content: space-between;
 }
-/* temp */
 .site-nav li {
-  height: 100%;
   border-bottom: 1px solid #575766;
-  /* opacity: 0; */
+  
 }
 
 .site-nav li:last-child {
   border-bottom: none;
 }
-/* temp */
+
 
 
 
@@ -108,7 +84,7 @@ header::after {
 .site-nav--open li:nth-child(2) { animation-delay: 100ms; }
 .site-nav--open li:nth-child(3) { animation-delay: 200ms; }
 .site-nav--open li:nth-child(4) { animation-delay: 300ms; }
-.site-nav--open li:nth-child(5) { animation-delay: 400ms; }
+
 
 @keyframes fadeIn {
     0% {   opacity: 0; transform: translateX(100px); }
@@ -119,7 +95,7 @@ header::after {
   opacity: 1;
   animation: fadeIn ease-out 800ms forwards;
 } 
-.site-nav--open li:nth-child(5) { animation-delay: 100ms; }
+
 .site-nav--open li:nth-child(4) { animation-delay: 200ms; }
 .site-nav--open li:nth-child(3) { animation-delay: 300ms; }
 .site-nav--open li:nth-child(2) { animation-delay: 400ms; }
@@ -131,13 +107,27 @@ header::after {
 }
 
 .site-nav a {
-  /* color: #EBEBD3; */
   color: #9B8055;
-  display: block;
-  padding: 2em 4em 2em 1.5em;
-  text-transform: uppercase;
+  display: flex;
+  padding: 3.5em 8em;
   text-decoration: none;
+  
 }
+
+/* adding something new */
+/* .site-nav a{
+  background: #464655;
+  color: #ebedeb;
+  display: block;
+  text-decoration: none;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 125ms linear;
+} */
+
+
 
 .site-nav a:hover,
 .site-nav a:focus {
@@ -146,7 +136,7 @@ header::after {
 }
 
 .site-nav--icon {
-  display: inline-block;
+  /* display: flex; */
   font-size: 1.5em;
   margin-right: 1em;
   width: 1.1em;
@@ -155,13 +145,8 @@ header::after {
 }
 
 .menu-toggle {
-  padding:1em;
-  position: absolute;
-  top: .5em;
-  right: .5em;
+
   cursor: pointer;
-  display: flex;
-  gap: 20px;
 }
 
 .hamburger,
@@ -169,10 +154,10 @@ header::after {
 .hamburger::after {
   content: '';
   display: block;
-  /* padding-top: 15px; */
   background: #9B8055;
-  height: 3px;
-  width: 1.75em;
+  transform: translateY(-8.5px);
+   height: 3px;
+   width: 1.75em; 
   border-radius: 3px;
   transition: all ease-in-out 500ms;
 }
@@ -186,8 +171,9 @@ header::after {
 }
 
 .open .hamburger {
-  transform: rotate(45deg);
+  transform: rotate(540deg);
 }
+
 
 .open .hamburger::before {
   opacity: 0;
@@ -212,15 +198,17 @@ header::after {
     float: right;
     clip-path: initial;
   }
+  .site-nav ul{
+    display: flex;
+  }
   
   .site-nav li {
-    display: inline-block;
     border: none;
   }
   
   .site-nav a {
-    padding: 0;
-    margin-left: 3em;
+     padding: 0; 
+    margin-left: 3em; 
   }
   
   .site-nav a:hover,
