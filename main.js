@@ -11,7 +11,6 @@ toggle.addEventListener("click", function(){
     } else{
         siteNav.classList.add("site-nav--closed");
         toggle.classList.add("open");
-
         siteNav.classList.add("site-nav--open");
     }
 });
