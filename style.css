@@ -43,10 +43,10 @@ header::after {
 }
 .site-nav {
   position: absolute;
-  top: 100%;       /* top orignally at 100% */ 
+  top: 0%;       /* top orignally at 100% */ 
   right: 0%;
   background: #464655;
-  clip-path: circle(0px at top right);        /*at top right */
+  clip-path: circle(0px at top right);      
   transition: clip-path ease-in-out 700ms;
   height: 0px;
   overflow: hidden;
